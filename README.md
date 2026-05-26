@@ -61,7 +61,7 @@ compile → build → run
 |-------|-------------|-------|
 | **compile** | Source artifacts validated against invariants | `pgs_governance` / `pgs_compiler` |
 | **build** | Validated artifacts materialized into a closed snapshot | `pgs_compiler` → `pgs_workspace/protocol_snapshot/` |
-| **run** | Runtime reads snapshot and executes | `pgs_workspace` (omnibachi CLI) |
+| **run** | Runtime reads snapshot and executes | `pgs_workspace` (pgs_runtime CLI) |
 
 The snapshot is sealed at build time. No behavior enters at execution time that was not in the snapshot.
 
@@ -86,7 +86,7 @@ pgs_transport       ←  egress: results returned to caller
 | Repo | Role |
 |------|------|
 | `pgs_workspace` | Entry point — snapshot + scripts |
-| `pgs_runtime` | Execution engine (omnibachi CLI) |
+| `pgs_runtime` | Execution engine (pgs_runtime CLI) |
 | `pgs_governance` | Constitutional rules + structure definitions |
 | `pgs_compiler` | Compiler pipeline + tooling |
 | `pgs_transport` | **This repo** — ingress/egress adapters |
